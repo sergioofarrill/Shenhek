@@ -1,0 +1,322 @@
+@font-face {
+    font-family: 'GothamBook';
+    src: url('fonts/Gotham-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamMedium';
+    src: url('fonts/Gotham-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamBold';
+    src: url('fonts/Gotham-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+html {-webkit-text-size-adjust:none; height: 100%;}
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+	font-size: 12px;
+	line-height: 1.7;
+	font-family: 'GothamBook';
+	background: #000;
+	
+	
+}
+.container{
+	height: 1147px;
+	max-height: 1147px;
+	width:860px;
+	overflow: hidden;
+	color: #FFF;
+	background-position: -20 -20;
+	background-image: url(bg-image.jpg);
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+}
+	
+.main {
+	width:768px;
+	background: transparent;
+	position: relative;
+}
+
+.t1 {
+	background-image: url(hotspotBG@2x.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
+#myMovie, .t1 { 
+	background: transparent;
+}
+
+
+
+#myMovie {
+	
+}
+
+
+.topNav {
+	background: #000;
+	height: 72px;
+	border-bottom: 2px solid #464646;
+}
+
+.treadlite {
+	width: 295px;
+	height: 72px;
+	color: #fff;
+	float: left;
+	text-align: center;
+	padding-top: 24px;
+	letter-spacing: 3px;
+}
+
+
+.uggLogo {
+	float: right;
+	display: block;
+	background-image: url(uggLogo@2x.png);
+	background-position: 60% 50%;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	width: 120px;
+	height: 72px;
+	border-left: 1px solid #464646;
+}
+
+.topLink {
+	border-left: 1px solid #464646;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+	display: block;
+	float: left;
+	width: 200px;
+	height: 72px;
+	padding-top: 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.navOn {
+	border-bottom: 5px solid #a9242a;
+	background: #1d1d1d;
+}
+
+
+
+/*************** slider pages ****************************/
+
+	#slider li {
+		width: 100%;
+		height:768px;
+		display:none;
+	}
+	
+	.galleryImg {
+		width: 100%;
+		height: 100%;
+		background-size: 80%;
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+		position: relative;
+		top: 200px;
+		left: 80px;
+	}
+	
+
+	.galleryImg div {
+		font-size: 12px;
+		text-transform: uppercase;
+		font-family: 'GothamBold',sans-serif;
+	}
+
+	.galleryVid {position:relative;top:142px;padding:20px;}
+	.galleryVid.animation{top:-50px;padding: 0;}
+	.watchVideo {
+		width: 140px;
+		background: #1d1d1d;
+		color: #fff;
+		text-align: center;
+		font-size: 13px;
+		padding: 8px;
+		position: relative;
+		bottom: 46%;
+		left: 41%;
+		}
+	.nextArrow {
+		width: 22px;
+		height: 41px;
+		position: absolute;
+		z-index: 20;
+		top: 340px;
+		right: 20px;
+		background-image: url(arrowNext@2x.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+
+	.prevArrow {
+		width: 22px;
+		height: 41px;
+		position: absolute;
+		z-index: 20;
+		top: 340px;
+		left: 20px;
+		background-image: url(arrowPrev@2x.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+
+	em {
+		width: 46px;
+		height: 46px;
+		background: transparent;
+		display: inline-block;
+	}
+	
+	.swatch { 
+		background-size: 100%; 
+		background-repeat: no-repeat;
+		display: block;
+	    cursor: pointer;
+	    text-indent: -9999px;
+	    width: 12px;
+	    height: 12px;
+	    margin: 0 3px;
+	    background-color: #b6b6b6 \9;
+	 
+	    -webkit-border-radius: 12px;
+	    -moz-border-radius: 12px;
+	    border-radius: 12px;
+	 
+	    -webkit-box-shadow: inset 0 0 0 2px #b6b6b6;
+	    -moz-box-shadow: inset 0 0 0 2px #b6b6b6;
+	    box-shadow: inset 0 0 0 2px #b6b6b6; }
+	
+	.on .swatch_item{
+		
+		background: #cecece; /* Old browsers */
+		background: -moz-radial-gradient(center, ellipse cover,  #cecece 1%, #a0a0a0 100%); /* FF3.6+ */
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#cecece), color-stop(100%,#a0a0a0)); /* Chrome,Safari4+ */
+		background: -webkit-radial-gradient(center, ellipse cover,  #cecece 1%,#a0a0a0 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-radial-gradient(center, ellipse cover,  #cecece 1%,#a0a0a0 100%); /* Opera 12+ */
+		background: -ms-radial-gradient(center, ellipse cover,  #cecece 1%,#a0a0a0 100%); /* IE10+ */
+		background: radial-gradient(ellipse at center,  #cecece 1%,#a0a0a0 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#a0a0a0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	 
+	    -webkit-box-shadow: none;
+	    moz-box-shadow::; none;
+	    box-shadow: none;
+	}
+		
+	#Navposition { display: block;
+		position: absolute;
+		bottom: 175px;
+		right: 17%;
+		width: 500px;
+		text-align: center;
+	 }
+	 
+	 .treadliteHead {
+	 	font-size: 32px;
+	 	color: #FFF;
+	 	margin-bottom: 10px;
+	 }
+	 
+	 .shoeDescription {
+	 	font-size: 14px;
+	 	letter-spacing: .0625em;
+	 	line-height: normal;
+	 	margin-bottom: 20px;
+	 	
+	 	
+	 }
+	 
+	 .selectedTitle {
+	 	
+	 	font-size: 20px;
+	 	margin-bottom: 5px;
+	 }
+	 
+	 .colorName {
+	 	
+		text-transform: uppercase;
+	 }
+	
+	.close {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		background-image: url(close3.png);
+		background-repeat: no-repeat;
+		background-size: 70%;
+		background-position: 70% 30%;
+	}
+	
+	.lockUp {
+		width:184px;
+		height: 50px;
+		background-image: url(../treadlite_lockUp.png);
+		background-repeat: no-repeat;
+		background-size:  100%;
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+		margin: 0 auto;
+	}
+
+	.sliderNav{
+		margin: 20px 0px 0px 31px;
+		display:block;
+	}
+
+	
+/*************** slider pages ****************************/
+
+sup,
+sub {
+	height: 0;
+	line-height: 1.7;
+	vertical-align: baseline;
+	vertical-align: bottom;
+	position: relative;
+	font-size: 70%;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+
+/*************** Orientation Styles ****************************/
+
+
+@media screen and (orientation: portrait) {
+  
+}
+
+/* For landscape, we want the tool bar stick on the left */
+
+@media screen and (orientation: landscape) {
+ 
+}

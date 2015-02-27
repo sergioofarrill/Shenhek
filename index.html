@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Introducing Treadlite</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/reset.css" type="text/css" />
+<link rel="stylesheet" href="css/ugg.min.css" type="text/css" />
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src='js/swipe.js'></script>
+
+<style type="text/css">
+	.shoe_lightweight{ background-image:url("shoe_lightweight@2x.png"); }
+	.shoe_flexible { background-image:url("shoe_flexible@2x.png"); }
+	.shoe_grip { background-image:url("shoe_grip@2x.png"); }
+	.shoe_durable { background-image:url("shoe_durable@2x.png"); }
+	.color0 { display: block; }
+</style>
+</head>
+<body>
+<div id="parallax" class="container">
+<div class="main t1">
+	<div id='slider' class='swipe'>
+	 <ul id="theShow">
+	  	<li class="galleryVid animation">
+	  		<video height="1024px" width="768px" controls="false" autoplay loop="true" id="myAnimation">
+	  			
+	  			<source src="Lightweight_comp_v005_iPad_FINAL_Prores.mp4" type="video/mp4">
+  	 			<source src="Lightweight_comp_v005_iPad_FINAL_Prores.webmhd.webm" type="video/webm">
+  				<source src="Lightweight_comp_v005_iPad_FINAL_Prores.oggtheora.ogv" type="video/ogg"> 
+  				<img src="shoe_lightweight@2x.png" titlte="Your browser does not support HTML5 video.">
+ 			</video>
+ 			<div class="watchVideo" onClick="treadVid()"> <span>WATCH VIDEO</span></div>
+	  	</li>
+		<li>
+			<div class="galleryImg shoe_grip">
+			</div>
+		</li>
+		<li>
+			<div class="galleryImg shoe_flexible">
+			</div>
+		</li>
+		<li>
+			<div class="galleryImg shoe_durable">
+			</div>
+		</li>
+		<li class="galleryVid">
+	  		<video width="720px" controls="false" id="myMovie">
+	  			
+	  			<source src="UGG_TREADLITE_60_NOURL_h264.mp4" type="video/mp4">
+ 			</video> 			
+	  	</li>
+	  </ul>
+	</div>
+	
+	<nav id="Navposition" class="position">
+		
+		<div class="selectedTitle treadliteHead charName">INTRODUCING TREADLITE BY UGG™</div>
+		<div class="shoeDescription charDesc">A lighter way to go. <br/><br/> Ultra lightweight, flexible and durable, our innovative new Treadlite by UGG™ outsole features proprietary cushioning technology to deliver the unparalleled comfort of UGG, with a nearly weightless feel.</div>
+		<div class="lockUp"></div>
+		<div class="sliderNav">
+			<em class="on"><div class="swatch swatch_item" onClick="slider.slide(0,2000);document.getElementById('myAnimation').play();"></div></em>
+			<em><div class="swatch swatch_item" onClick="slider.slide(1,900);document.getElementById('myMovie').pause();"></div></em>
+			<em><div class="swatch swatch_item" onClick="slider.slide(2,900);document.getElementById('myMovie').pause();"></div></em>
+			<em><div class="swatch swatch_item" onClick="slider.slide(3,900);document.getElementById('myMovie').pause();"></div></em>
+			<em><div class="swatch swatch_item" onClick="slider.slide(4,2000);document.getElementById('myMovie').play();"></div></em>
+		</div>
+	</nav>
+	
+	
+	</div>	
+</div>
+
+<!--http://swipejs.com/-->
+<script>
+//http://stackoverflow.com/questions/7798201/document-ontouchmove-and-scrolling-on-ios-5
+document.ontouchmove = function(e) {e.preventDefault()};
+var slider
+var colors=['INTRODUCING TREADLITE BY UGG™','GRIP','FLEXIBILITY','DURABILITY','INTRODUCING TREADLITE BY UGG™']
+var description=[
+	'A lighter way to go. <br/><br/> Ultra lightweight, flexible and durable, our innovative new Treadlite by UGG™ outsole features proprietary cushioning technology to deliver the unparalleled comfort of UGG, with a nearly weightless feel.',
+	'The Treadlite by UGG™ core compound contains rubber, which grips exceptionally well on both wet and dry surfaces.',
+	'Treadlite by UGG™ doesn’t easily compress, which allows it to be formulated softer than other materials typically used.',
+	'Treadlite by UGG™ features enhanced abrasion resistance, preventing degradation. ',
+	'A lighter way to go. <br/><br/> Ultra lightweight, flexible and durable, our innovative new Treadlite by UGG™ outsole features proprietary cushioning technology to deliver the unparalleled comfort of UGG, with a nearly weightless feel.'
+
+]
+makeSlides();
+
+function makeSlides() {
+bullets = document.getElementById('Navposition').getElementsByTagName('em')
+slider = new Swipe(document.getElementById('slider'), {
+      continuous: true,
+      callback: function(e, pos) {
+        
+        var i = bullets.length;
+        while (i--) {
+          bullets[i].className = '';
+        }
+        bullets[pos].className = 'on active';
+		$(".charName").html(colors[pos]);
+		$(".charDesc").html(description[pos]);
+		
+	  }
+    });
+}
+
+</script>
+<script> //Adds motion to BG on devices
+	
+    document.addEventListener("DOMContentLoaded", function() {
+
+      var background = document.getElementById("parallax");
+      var position = document.getElementById("position");
+
+      if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', function(eventData) {
+          var yTilt = Math.round((-eventData.beta + 90) * (40/180) - 40);
+          var xTilt = Math.round(-eventData.gamma * (40/180) - 20);
+          if (xTilt > 0) {
+            xTilt = -xTilt;
+          } else if (xTilt < -40) {
+            xTilt = -(xTilt + 80);
+          }
+
+          var backgroundPositionVal = xTilt + 'px ' + yTilt + 'px';
+          background.style.backgroundPosition = backgroundPositionVal;
+        }, false);
+
+      } 
+    });
+
+  
+
+</script>
+<script>
+	function treadVid(){
+		
+		document.getElementById('myAnimation').pause();
+		document.getElementById('myMovie').play();
+		slider.slide(4,2000);
+	}
+</script>
+
+</body>
+</html>
